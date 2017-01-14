@@ -24,7 +24,7 @@ pwd = "password"      # 教务系统密码，如 pwd = "password"
 # 请在此设置邮箱信息，默认仅供参考无法使用
 mail_host = 'smtp.exmail.qq.com'   #发送邮箱 SMTP 服务器地址
 mail_port = 465                    #发送邮箱 SMTP 服务器端口
-mail_useSSL = True                 #是否使用 SSL 
+mail_useSSL = True                 #是否使用 SSL
 mail_user = 'nofity@smartjinyu.com'    #发送邮箱用户名
 mail_pass = 'adminadmin'            #发送邮箱密码
 
