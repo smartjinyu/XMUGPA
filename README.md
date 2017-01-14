@@ -10,17 +10,17 @@
 
 敝校的那个破烂教务系统里只有科目的成绩，没有绩点，每次都得手动计算麻烦至极，就写了这个小工具，输入教务系统的账号密码后会打印所有主修科目的成绩、绩点，各个学期的绩点以及全部学期的总绩点。
 
-详情及截图可以参考[我的博客]
+详情及截图可以参考[我的博客1]
 
-[我的博客]:http://smartjinyu.com/python/2016/09/09/XMU_GPA_Calc.html
+[我的博客1]:https://smartjinyu.com/python/2016/09/09/XMU_GPA_Calc.html
 
 ##### 绩点监控工具 gpamonitor.py
 
 用于监测是否发布了新的成绩，需要在 VPS 上配置定时任务。
 
-详情及配置方法可以参考[我的博客]
+详情及配置方法可以参考[我的博客2]
 
-[我的博客]:http://localhost:4000/python/2017/01/14/xmu_gpa_monitor.html
+[我的博客2]:http://smartjinyu.com/python/2017/01/14/xmu_gpa_monitor.html
 
 
 
