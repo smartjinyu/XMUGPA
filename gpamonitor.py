@@ -31,7 +31,6 @@ mail_pass = 'adminadmin'            #发送邮箱密码
 mail_receivers = 'smartjinyu@gmail.com'  #用于接收通知的接收邮箱地址
 #
 
-str_list = []
 def login():
     loginUrl = 'http://ssfw.xmu.edu.cn/cmstar/userPasswordValidate.portal'
     gradeUrl = 'http://ssfw.xmu.edu.cn/cmstar/index.portal?.pn=p1201_p3535'
@@ -45,6 +44,7 @@ def login():
     s.post(loginUrl,postData)
    # html = requests.get(loginUrl,postData)
     html = s.get(gradeUrl)
+    print html.text
     if u'登录须知：' in html.text:
         print "Login Failed, please check your id or password."
     else:
@@ -175,15 +175,16 @@ def parse_page(html):
     print table
 
     if(os.path.isfile('xmugpa.dat')):
-        f = open('xmugpa.dat', 'r+b')
+        f = open('xmugpa.dat', 'rb')
         preGPA = float(pickle.load(f))
         if (preGPA == curGPA):
             print "GPA not changed!"
         else:
             print "GPA has changed, we will send you an e-mail."
+            f.close()
+            f = open('xmugpa.dat', 'wb')
             if (sendMail(table)):
                 pickle.dump(curGPA, f)
-
         f.close()
     else:
         f = open('xmugpa.dat', 'wb')
@@ -220,6 +221,7 @@ def main():
     reload(sys)
     sys.setdefaultencoding('utf8')
     login()
+
 
 if __name__ == '__main__':
     main()
