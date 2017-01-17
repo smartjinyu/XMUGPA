@@ -56,11 +56,8 @@ def parse_page(html):
     name = soup.find(text = re.compile(u"欢迎您：")).encode('utf-8')
     name = name[name.find("：")+3:]
     print ("姓名: %s  学号: %s"%(name,id))
-    str_list.append("姓名: %s  学号: %s"%(name,id))
     print '本程序只计算主修成绩，如有需要计算辅修交流成绩请自行修改源代码'
-    str_list.append('本程序只计算主修成绩，如有需要计算辅修交流成绩请自行修改源代码')
     print
-    str_list.append("")
 
     grade_list_soup = soup.find('table',attrs={'class','xmu_table_class'})
     trList = grade_list_soup.find_all('tr')
