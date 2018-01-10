@@ -137,7 +137,10 @@ def parse_page(html):
             table.add_row([name,ccredit,cgrade,cgpa])
             j += 1
         print table
-        print ('本学期参与绩点计算的学分:%-5.1f 本学期总绩点:%-5.1f 本学期GPA:%-5.5f'%(credit,point,point/credit))
+        if credit != 0:
+            print ('本学期参与绩点计算的学分:%-5.1f 本学期总绩点:%-5.1f 本学期GPA:%-5.5f'%(credit,point,point/credit))
+        else:
+            print ('本学期参与绩点计算的学分:0.0 本学期总绩点:0.0 本学期GPA:0.00000')
         print
         point_all += point
         credit_all += credit
